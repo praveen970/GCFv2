@@ -1,0 +1,98 @@
+Project Specification for TripsTracker
+Project Title: TripsTracker
+
+Project Description:
+TripsTracker is an Android application that leverages Google Maps and location services to allow users to navigate and track locations dynamically. It facilitates outdoor activities, travel planning, and real-time location-based coordination among user groups by providing two distinct modes of operation: Group Mode and Server Mode.
+
+Objective:
+To provide a versatile map-based navigation app that supports:
+
+Collaborative destination and place management in Group Mode.
+Controlled management by a single user in Server Mode.
+Target Audience:
+
+Travel groups and families planning and managing trips together.
+Event organizers needing controlled navigation settings for participants.
+Adventure groups such as hikers or cyclists needing synchronized location tracking.
+Features:
+
+Map and Location Integration:
+
+Embed and interact with Google Maps.
+Real-time GPS tracking with location updates.
+Two Operational Modes:
+
+Group Mode: All members can add or modify destinations and these changes sync across all users in the group.
+Server Mode: Designated 'server' user controls destination settings, with other users viewing updates but unable to make changes.
+Search and Navigation:
+
+Use Google Places API for robust search functionality.
+Provide directions and navigation options to selected destinations.
+Interactive Markers and Places:
+
+Users can place and edit markers that sync across the group in Group Mode.
+In Server Mode, only the server can place or modify markers.
+Real-Time Syncing:
+
+Changes in one user’s app reflected in real-time for others via Google Cloud Pub/Sub.
+User Authentication and Group Management:
+
+Secure user authentication mechanism.
+Ability to create and manage groups, assigning roles where applicable.
+UI Components:
+
+Customizable user interface adapting to the selected mode.
+Dialogs and notifications for real-time interaction and feedback.
+Security and Permissions Management:
+
+Manage permissions within the app for different roles.
+Ensure data transmission and storage are secure.
+Technology Stack:
+
+Programming Language: Kotlin
+Android SDK: Compatibility up to Android API level 21.
+Libraries and APIs:
+Google Maps and Google Places APIs
+Google Fused Location API
+Google Cloud Pub/Sub for syncing data
+Development Tools:
+
+Android Studio
+Git and GitHub
+Jenkins or GitHub Actions
+Security Considerations:
+
+HTTPS for all network communication.
+Compliance with privacy regulations like GDPR for handling location data.
+Testing Strategy:
+
+Unit testing for backend logic.
+Integration testing for API integration and data syncing.
+Automated UI tests with Espresso for both Group and Server modes.
+Milestones:
+
+Setup and Basic Functionality:
+
+Initial project setup and core map functionalities.
+Basic UI and user authentication.
+Group and Server Mode Implementations:
+
+Development of features specific to each mode.
+Real-time data syncing setup and testing.
+Feature Completion and Integration Testing:
+
+Complete all planned features.
+Perform thorough integration tests for both modes.
+Final Testing, Documentation, and Deployment:
+
+Resolve any bugs found during testing.
+Finalize documentation and prepare app for deployment.
+Launch and Post-Launch Support:
+
+Launch the app on the Google Play Store.
+Monitor app performance and user feedback for further updates.
+Documentation and Support:
+
+Detailed code documentation.
+User manual and FAQ section within the app and online.
+Support system for handling user queries and issues.
