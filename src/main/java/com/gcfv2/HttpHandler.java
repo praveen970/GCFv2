@@ -98,10 +98,11 @@ public class HttpHandler implements HttpFunction {
         try {
             if (documentSnapshot.exists()) {
                 Boolean isActive = documentSnapshot.getBoolean("active");
-                if (isActive != null && !isActive) {
+                if (isActive != null) {
                     Map<String, Object> updates = new HashMap<>();
                     updates.put("active", true);
-                    writer.write("Activated the code");
+                    response.setContentType("application/json");
+                    writer.write("{\"message\": \"Code is active.\", \"valid\": true}");
                     firestoreService.updateDocument(code, updates);
                     String subscriptionId = "subscription-" + code + "-" + id;
                     ApiFuture<Void> subscriptionFuture = pubSubService.createPubSubSubscriptionAsync("topic-" + code, subscriptionId);
@@ -129,6 +130,7 @@ public class HttpHandler implements HttpFunction {
                             }
                         }
                     }, Executors.newCachedThreadPool());
+                    writer.flush();
                 } else {
                     response.setContentType("application/json");
                     writer.write("{\"message\": \"Code is invalid.\", \"valid\": false}");
